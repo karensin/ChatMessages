@@ -1,0 +1,17 @@
+ 
+ .container{
+   padding:15px;
+   font-family: 'Avenir';
+  
+ }
+ 
+ ul.react-bootstrap-table-page-btns-ul.pagination{
+    margin: 0;
+  }
+  button.btn.btn-warning.react-bs-table-del-btn{
+    background-color: red;
+    width: 100px;
+    height: 40px;
+    font-size:15px ;
+  }
+  
