@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function MessageList() {
-    const USE_JSON_FILTER = false;
+    const USE_JSON_FILTER = true;
     const messageSet = new Set([]);
 
     const uuids = {};
@@ -66,6 +66,7 @@ export default function MessageList() {
 
     const options = {
         defaultSortName: 'sentAt',
+        defaultSortOrder: 'desc',
         sortIndicator: true, // disable sort indicator
         sizePerPageList: [{
             text: '5', value: 5
