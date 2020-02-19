@@ -6,15 +6,13 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function MessageList() {
-    const USE_JSON_FILTER = true;
+    const USE_JSON_FILTER = false;
     const messageSet = new Set([]);
 
     const uuids = {};
 
-
     //filter duplicates 
     // I came up with 2 different approaches to do filtering feature 
-
     const dedupeMessages = messages => {
         //Using JSON.Stringify to serialize each message's uuid and content into a unique format and a Set to dedup 
         //benefit of this approach is that serializing objects is a standard practice 
@@ -52,9 +50,7 @@ export default function MessageList() {
     }
     const filtered = dedupeMessages(messages)
 
-
     //Time formatting into human-readable string "DayOfTheWeek Month Day, Year at Time" 
-
     function timeFormatter(cell, row) {
         let getTime = new Date(cell);
         let time = getTime.toLocaleString(undefined, {
