@@ -86,10 +86,9 @@ export default function MessageList() {
         bgColor: '#95A7E2'
     };
 
-
     //mapping and applying unique keys to each row
     const result = filtered.map(item => {
-        return { ...item, uuid: uuidv4() }
+        return { ...item, key: uuidv4() }
     })
 
     return (
@@ -97,7 +96,7 @@ export default function MessageList() {
             <Row>
                 <Col>
                     <BootstrapTable data={result} height='auto' maxHeight='500px' pagination={true} striped hover options={options} selectRow={selectRowProp} deleteRow={true}>
-                        <TableHeaderColumn isKey dataField='uuid' hidden> uuidv </TableHeaderColumn>
+                        <TableHeaderColumn isKey dataField='key' hidden> key </TableHeaderColumn>
                         <TableHeaderColumn dataField='senderUuid'> From (Sender ID)</TableHeaderColumn>
                         <TableHeaderColumn dataField='content'> Message Content</TableHeaderColumn>
                         <TableHeaderColumn dataField='sentAt' dataSort={true} dataFormat={timeFormatter}
